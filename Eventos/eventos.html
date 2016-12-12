@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <title>dblClick</title>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <style type="text/css">
+        #click{
+            border: solid;
+            background-color: cadetblue;
+        }
+        #MouseLeave{
+            height: 100px;
+            width: 600px;
+            border: solid;
+            border-radius: 20px;
+            border-left-width: 1px;
+            border-top-width: 1px;
+            border-right-width: 1px;
+            border-bottom-width: 1px;
+        }
+        #foco{
+            display: none;
+            
+        }
+        #nofoco{
+            display: none;
+        }
+        #imgmoto{
+            border-radius: 20px;
+            margin-left: 150px;
+            width: 300px;
+            height: 300px;
+            border: solid;
+        }
+    
+    </style>
+</head>
+<body >
+    <script type="text/javascript">
+   
+        
+$(document).ready(function(){
+    $("#click").click(function(){
+        alert("Has Hecho Click")
+        
+    });
+});
+    
+   
+   $(document).ready(function(){
+    $("#pulsar").dblclick(function(){
+        var texto = document.formas.texto.value;
+        if (texto == "hola")
+            {
+                alert("hola");
+            }else{
+                alert("no saludas");
+            }
+        
+    });
+});
+        
+    $(document).ready(function(){
+        $("#mouseenter").mouseenter(function(){
+          $(this).css({"background-color":"red",
+                      "border":"solid",
+                      "font-size":"15px"})
+            
+        });       
+        
+    });
+        
+        
+        $(document).ready(function(){
+           $("#MouseLeave").mouseleave(function(){               
+              $(this).css({"background-color":"red"})
+               $("#agregado").text("Saliste de este Recuadro")                          
+               
+           });           
+            
+        });
+        
+       i = 0;
+      $(document).ready(function(){
+        $("#inputuno").keypress(function(){
+        $("span").text(i += 13);
+        });
+        });
+        
+        
+        
+        $(document).ready(function(){
+           $("#keidown").keydown(function(){
+               $(this).css({"background-color":"black"})               
+           });
+            $("#keidown").keyup(function(){
+        $(this).css({"background-color":"red"});
+                
+             }) ;
+        }); 
+        
+        
+        $(document).ready(function(){
+    $("#forma").submit(function(){
+        alert("Hecho");
+    });
+});
+        
+        
+        
+        $(document).ready(function(){
+	$("input[name=nombre1]").change(function(){
+		alert($('input[name=nombre1]').val());
+	});
+	
+});
+       
+        
+        $(document).ready(function(){
+           $("#input2").focus(function (){
+               $("#foco").css({"display": "inline","color": "aqua" }).fadeOut(2000)
+               
+           }); 
+            
+        });
+        
+        
+        $(document).ready(function(){
+    $("#input3").blur(function(){
+       $("#nofoco").css({"display":"inline"}).fadeOut(2000)
+      });
+    });
+        
+        
+        
+        $(document).ready(function(){
+    $("imgmoto").load(function(){
+        alert("Image loaded.");
+        });
+        });
+        
+        
+        x = 0;
+     $(document).ready(function(){
+     $(window).resize(function(){
+        $("#resize").text(x += 1);
+       });
+    });
+        
+      c = 0;
+     $(document).ready(function(){
+     $(window).scroll(function(){
+        $("#scroll").text(c += 1);
+       });
+    });  
+        
+        $(document).ready(function(){
+           $(window).unload(function(){
+              alert("unload") 
+           }); 
+        });
+        
+        $(document).ready(function(){
+           $("#unload").unload(function(){
+               alert("gracias por usar pagina")
+           }) ;
+            
+        });
+</script>
+
+    <h2>Click</h2>
+    <p id="click">Click Aqui</p>
+    
+    <h2> Doble Click</h2>
+    <form name="formas">
+    <input type="text" id="texto">
+    <input type="button" value="Has Doble Click" id="pulsar">        
+    </form>
+    
+    <h2>MouseEnter</h2>
+    <a id="mouseenter">Cambiare a Amarillo si pasas el mouse</a>
+    
+    <h2>MouseLeave</h2>
+    <div id="MouseLeave"><h1 id="agregado"></h1></div>
+    
+    <h2>keypress</h2> 
+    <input type="text" id="inputuno">
+    <p>Keypresses: <span>0</span></p>
+    
+    <h2>keydown y Keyup</h2>
+    <input type="text" id="keidown">
+    
+     <h2>Submit</h2>
+    <form action="" id="forma">
+  Nombre: <input type="text" name="Nombre" value="Mickey"><br>
+  Apellido: <input type="text" name="Apellido" value="Mouse"><br>
+  <input type="submit" value="Pulsador">
+</form>
+    
+    <h2>Change</h2>
+    Revisa el cambio: <input name="nombre1" type="text">
+    
+    <h2>Focus</h2>
+    <input type="text" id="input2">
+    <span id="foco">Aca esta el foco</span>
+    
+    <h2>Blur</h2>
+    <input type="text" id="input3">
+    <span id="nofoco">Aca no esta el foco</span>
+    
+    <h2>Load</h2>
+    <img id="imgmoto" src="motouno.jpeg">
+    
+    <h2>Resize</h2>
+    <p>Ventana cambiada <span id="resize">0</span> veces.</p>
+    <p>El cambio</p>
+    
+    <h2>Scroll</h2>
+    <p>Ventana deslizada <span id="scroll">0</span> veces.</p>
+    
+    <h2 id="unload"><a href="http://www.google.com">Unload</a></h2>
+    
+    
+    
+    
+    
+</body>
+</html>

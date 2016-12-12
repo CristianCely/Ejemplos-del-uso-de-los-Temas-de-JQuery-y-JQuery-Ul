@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>select Ejemplo</title>
+  <style>
+  p {
+    color: blue;
+  }
+  #mensaje {
+    color: darkturquoise;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+  <p>Seleccione texto</p>
+  <input type="text" value="Texto Uno">
+  <input type="text" value="Seleccion">
+  <div id="mensaje"></div>
+ 
+<script>
+$( ":input" ).select(function() {
+  $( "#mensaje" ).text( "Texto Seleccionado" ).show().fadeOut( 2000 );
+});
+</script>
+ 
+</body>
+</html>
